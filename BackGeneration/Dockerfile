@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["ImageGenerationAPI/ImageGenerationAPI.csproj", "ImageGenerationAPI/"]
+COPY ["BackGeneration/ImageGenerationAPI.csproj", "ImageGenerationAPI/"]
 RUN dotnet restore "ImageGenerationAPI/ImageGenerationAPI.csproj"
 COPY . .
-WORKDIR "/src/ImageGenerationAPI"
+WORKDIR "/src/BackGeneration/ImageGenerationAPI"
 RUN dotnet build "ImageGenerationAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
