@@ -20,7 +20,7 @@ jobs:
 
       - name: Build and push backend Docker image
         run: |
-          docker build -t dimland/image-generator-backend:latest ./Backend
+          docker build -t dimland/image-generator-backend:latest ./Backend/BackGeneration
           docker push dimland/image-generator-backend:latest
 
       - name: Deploy backend to server
