@@ -34,4 +34,4 @@ jobs:
             docker pull dimland/image-generator-backend:latest
             docker stop backend-container || true
             docker rm backend-container || true
-            docker run -d --name backend-container --restart always --network my-net -p 7079:80 dimland/image-generator-backend:latest
+            docker run -d --name backend-container --restart always --network my-net-devops -p 7079:80 dimland/image-generator-backend:latest
